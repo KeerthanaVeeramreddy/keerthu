@@ -420,7 +420,7 @@
 				"pipelines": [
 					{
 						"pipelineReference": {
-							"referenceName": "p_Date_MultipleTables_to_MultipleFiles",
+							"referenceName": "p_Date_MultipleFlies_to_MultipleTables",
 							"type": "PipelineReference"
 						},
 						"parameters": {}

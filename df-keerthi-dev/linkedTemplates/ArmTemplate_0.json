@@ -79,7 +79,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/ds_AzureSql_Date_MultipleTables_to_MultipleFiles')]",
+			"name": "[concat(parameters('factoryName'), '/ds_AzureSql_Date_MultipleFiles_to_MultipleTables')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -263,7 +263,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/ds_adls_Date_MultipleTables_to_MultipleFiles')]",
+			"name": "[concat(parameters('factoryName'), '/ds_adls_Date_MultipleFiles_to_MultipleTables')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -423,7 +423,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/ds_adls_meta_Date_MultipleTables_to_MultipleFiles')]",
+			"name": "[concat(parameters('factoryName'), '/ds_adls_meta_Date_MultipleFiles_to_MultipleTables')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -596,7 +596,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/p_Date_MultipleTables_to_MultipleFiles')]",
+			"name": "[concat(parameters('factoryName'), '/p_Date_MultipleFlies_to_MultipleTables')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -615,11 +615,11 @@
 						"userProperties": [],
 						"typeProperties": {
 							"dataset": {
-								"referenceName": "ds_adls_meta_Date_MultipleTables_to_MultipleFiles",
+								"referenceName": "ds_adls_meta_Date_MultipleFiles_to_MultipleTables",
 								"type": "DatasetReference",
 								"parameters": {
 									"datefolder": {
-										"value": "@concat('data/',formatDateTime(utcNow(),'yyyy-MM-dd'))",
+										"value": "@concat('Data/',formatDateTime(utcNow(),'yyyy-MM-dd'))",
 										"type": "Expression"
 									}
 								}
@@ -696,7 +696,7 @@
 									},
 									"inputs": [
 										{
-											"referenceName": "ds_adls_Date_MultipleTables_to_MultipleFiles",
+											"referenceName": "ds_adls_Date_MultipleFiles_to_MultipleTables",
 											"type": "DatasetReference",
 											"parameters": {
 												"x": {
@@ -704,7 +704,7 @@
 													"type": "Expression"
 												},
 												"folder": {
-													"value": "@concat('data/',formatDateTime(utcNow(),'yyyy-MM-dd'))",
+													"value": "@concat('Data/',formatDateTime(utcNow(),'yyyy-MM-dd'))",
 													"type": "Expression"
 												}
 											}
@@ -712,7 +712,7 @@
 									],
 									"outputs": [
 										{
-											"referenceName": "ds_AzureSql_Date_MultipleTables_to_MultipleFiles",
+											"referenceName": "ds_AzureSql_Date_MultipleFiles_to_MultipleTables",
 											"type": "DatasetReference",
 											"parameters": {
 												"y": {
@@ -734,9 +734,9 @@
 				"lastPublishTime": "2025-02-28T09:33:48Z"
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/ds_adls_meta_Date_MultipleTables_to_MultipleFiles')]",
-				"[concat(variables('factoryId'), '/datasets/ds_adls_Date_MultipleTables_to_MultipleFiles')]",
-				"[concat(variables('factoryId'), '/datasets/ds_AzureSql_Date_MultipleTables_to_MultipleFiles')]"
+				"[concat(variables('factoryId'), '/datasets/ds_adls_meta_Date_MultipleFiles_to_MultipleTables')]",
+				"[concat(variables('factoryId'), '/datasets/ds_adls_Date_MultipleFiles_to_MultipleTables')]",
+				"[concat(variables('factoryId'), '/datasets/ds_AzureSql_Date_MultipleFiles_to_MultipleTables')]"
 			]
 		},
 		{
