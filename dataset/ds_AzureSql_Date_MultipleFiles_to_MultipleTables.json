@@ -1,5 +1,5 @@
 {
-	"name": "ds_AzureSql_Date_MultipleTables_to_MultipleFiles",
+	"name": "ds_AzureSql_Date_MultipleFiles_to_MultipleTables",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "lnk_AzureSql",

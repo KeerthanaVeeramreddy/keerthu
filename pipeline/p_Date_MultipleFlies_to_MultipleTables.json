@@ -1,5 +1,5 @@
 {
-	"name": "p_Date_MultipleTables_to_MultipleFiles",
+	"name": "p_Date_MultipleFlies_to_MultipleTables",
 	"properties": {
 		"activities": [
 			{
@@ -16,11 +16,11 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "ds_adls_meta_Date_MultipleTables_to_MultipleFiles",
+						"referenceName": "ds_adls_meta_Date_MultipleFiles_to_MultipleTables",
 						"type": "DatasetReference",
 						"parameters": {
 							"datefolder": {
-								"value": "@concat('data/',formatDateTime(utcNow(),'yyyy-MM-dd'))",
+								"value": "@concat('Data/',formatDateTime(utcNow(),'yyyy-MM-dd'))",
 								"type": "Expression"
 							}
 						}
@@ -97,7 +97,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "ds_adls_Date_MultipleTables_to_MultipleFiles",
+									"referenceName": "ds_adls_Date_MultipleFiles_to_MultipleTables",
 									"type": "DatasetReference",
 									"parameters": {
 										"x": {
@@ -105,7 +105,7 @@
 											"type": "Expression"
 										},
 										"folder": {
-											"value": "@concat('data/',formatDateTime(utcNow(),'yyyy-MM-dd'))",
+											"value": "@concat('Data/',formatDateTime(utcNow(),'yyyy-MM-dd'))",
 											"type": "Expression"
 										}
 									}
@@ -113,7 +113,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "ds_AzureSql_Date_MultipleTables_to_MultipleFiles",
+									"referenceName": "ds_AzureSql_Date_MultipleFiles_to_MultipleTables",
 									"type": "DatasetReference",
 									"parameters": {
 										"y": {
