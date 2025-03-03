@@ -8,6 +8,9 @@
 		"parameters": {
 			"x": {
 				"type": "string"
+			},
+			"folder": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
@@ -19,7 +22,10 @@
 					"value": "@dataset().x",
 					"type": "Expression"
 				},
-				"folderPath": "Data",
+				"folderPath": {
+					"value": "@dataset().folder",
+					"type": "Expression"
+				},
 				"fileSystem": "adventureworks"
 			},
 			"columnDelimiter": "|",
