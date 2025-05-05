@@ -1,0 +1,25 @@
+{
+	"name": "snk_ds_SqlServer_multiplefiles_multipletables",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lnk_SqlServer",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"y": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": {
+				"value": "@dataset().y",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

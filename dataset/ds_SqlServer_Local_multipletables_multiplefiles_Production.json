@@ -1,0 +1,25 @@
+{
+	"name": "ds_SqlServer_Local_multipletables_multiplefiles_Production",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lnk_SqlServer",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"x": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "Production",
+			"table": {
+				"value": "@dataset().x",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

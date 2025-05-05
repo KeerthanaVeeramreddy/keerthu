@@ -1,0 +1,17 @@
+{
+	"name": "src_ds_AzureSql_HumanResources_Department",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lnk_SqlServer",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "HumanResources",
+			"table": "Department"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,9 @@
+{
+	"name": "df-Vkeerthi-dev",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b84fb1fb-14fd-4667-a81a-5e7bca4cfa88",
+		"tenantId": "c6432ef9-2257-46d1-8b41-3fe8d7d401cf"
+	}
+}

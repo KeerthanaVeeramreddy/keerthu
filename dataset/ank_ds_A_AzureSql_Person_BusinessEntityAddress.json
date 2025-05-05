@@ -1,0 +1,17 @@
+{
+	"name": "ank_ds_A_AzureSql_Person_BusinessEntityAddress",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lnk_AzureSql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Person_CountryRegion"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

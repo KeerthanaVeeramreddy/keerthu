@@ -1,0 +1,30 @@
+{
+	"name": "snk_ds_adls_Json_multipletables_multiplefiles_Production",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lnk_adls",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"y": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().y",
+					"type": "Expression"
+				},
+				"folderPath": "Data3",
+				"fileSystem": "keerthi-container-dev"
+			},
+			"encodingName": "UTF-8"
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
