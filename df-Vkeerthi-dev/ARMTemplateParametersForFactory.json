@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "df-Vkeerthi-dev"
+		},
+		"lnk_AzureSql_password": {
+			"value": ""
+		},
+		"lnk_adls_accountKey": {
+			"value": ""
+		},
+		"lnk_AzureSql_properties_typeProperties_server": {
+			"value": "keerthi-db-server.database.windows.net"
+		},
+		"lnk_AzureSql_properties_typeProperties_database": {
+			"value": "keerthi_db_dev"
+		},
+		"lnk_AzureSql_properties_typeProperties_userName": {
+			"value": "KeerthanaVeeramreddy"
+		},
+		"lnk_adls_properties_typeProperties_url": {
+			"value": "https://keerthidatalakedev.dfs.core.windows.net/"
+		}
+	}
+}
