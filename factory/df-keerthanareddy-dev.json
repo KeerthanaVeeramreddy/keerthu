@@ -1,0 +1,9 @@
+{
+	"name": "df-keerthanareddy-dev",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "6cbf0951-b838-4311-be6c-babb6a29a5c7",
+		"tenantId": "51260900-a2f0-4642-bbc5-fd7634d88241"
+	}
+}
