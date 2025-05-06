@@ -1,5 +1,5 @@
 {
-	"name": "ds_adls_mutiplefiles_to_mutipletables",
+	"name": "src_ds_adls_File_convert_File_Person_Address",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "lnk_adls",
@@ -10,10 +10,11 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": "Person_Address_001.csv",
 				"folderPath": "Data",
 				"fileSystem": "keerthana-container-dev"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "|",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
