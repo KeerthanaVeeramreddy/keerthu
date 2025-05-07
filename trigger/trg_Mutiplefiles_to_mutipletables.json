@@ -2,7 +2,7 @@
 	"name": "trg_Mutiplefiles_to_mutipletables",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Started",
+		"runtimeState": "Stopped",
 		"pipelines": [
 			{
 				"pipelineReference": {
