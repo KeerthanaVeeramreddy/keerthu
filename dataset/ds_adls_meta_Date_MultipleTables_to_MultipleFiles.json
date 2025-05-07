@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"folderPath": "Data",
-				"fileSystem": "adventureworks"
+				"fileSystem": "keerthana-container-dev"
 			},
 			"columnDelimiter": "|",
 			"escapeChar": "\\",

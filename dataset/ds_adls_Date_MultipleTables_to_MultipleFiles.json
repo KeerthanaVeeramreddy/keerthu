@@ -20,7 +20,7 @@
 					"type": "Expression"
 				},
 				"folderPath": "Data",
-				"fileSystem": "adventureworks"
+				"fileSystem": "keerthana-container-dev"
 			},
 			"columnDelimiter": "|",
 			"escapeChar": "\\",
