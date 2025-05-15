@@ -1,18 +1,11 @@
 {
-	"name": "p_mutiplefiles_to_mutipletables",
+	"name": "p_Audit",
 	"properties": {
 		"activities": [
 			{
 				"name": "Get Metadata1",
 				"type": "GetMetadata",
-				"dependsOn": [
-					{
-						"activity": "Script1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -23,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "ds_adls_mutiplefiles_to_mutipletables",
+						"referenceName": "ds_adls_Audit",
 						"type": "DatasetReference"
 					},
 					"fieldList": [
@@ -44,7 +37,7 @@
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "Filter1",
+						"activity": "Get Metadata1",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -53,7 +46,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Filter1').output.value",
+						"value": "@activity('Get Metadata1').output.childItems",
 						"type": "Expression"
 					},
 					"activities": [
@@ -98,7 +91,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "src_ds_adls_mutiplefiles_to_mutipletables",
+									"referenceName": "src_ds_adls_Audit",
 									"type": "DatasetReference",
 									"parameters": {
 										"x": {
@@ -110,11 +103,11 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "snk_ds_AzureSql_mutiplefiles_to_mutipletables",
+									"referenceName": "snk_ds_AzureSql_Audit",
 									"type": "DatasetReference",
 									"parameters": {
 										"y": {
-											"value": "@substring(item().name,0,lastindexof(item().name,'_'))",
+											"value": "@substring(item().name,0,lastindexof(item().name,'.csv'))",
 											"type": "Expression"
 										}
 									}
@@ -180,81 +173,8 @@
 						}
 					]
 				}
-			},
-			{
-				"name": "Filter1",
-				"type": "Filter",
-				"dependsOn": [
-					{
-						"activity": "Get Metadata1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"items": {
-						"value": "@activity('Get Metadata1').output.childItems",
-						"type": "Expression"
-					},
-					"condition": {
-						"value": "@endsWith(item().name, '.csv')\n",
-						"type": "Expression"
-					}
-				}
-			},
-			{
-				"name": "Script1",
-				"type": "Script",
-				"dependsOn": [
-					{
-						"activity": "Validation1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"linkedServiceName": {
-					"referenceName": "lnk_AzureSql",
-					"type": "LinkedServiceReference"
-				},
-				"typeProperties": {
-					"scripts": [
-						{
-							"type": "Query",
-							"text": "Truncate table Person_CountryRegion\r\nTruncate table Person_EmailAddress\r\nTruncate table Person_BusinessEntityAddress\r\nTruncate table Person_Address\r\nTruncate table Person_AddressType\r\nTruncate table Person_BusinessEntity\r\nTruncate table Person_BusinessEntityContact\r\nTruncate table Person_ContactType\r\nTruncate table Person_Password\r\nTruncate table Person_Person\r\nTruncate table Person_PersonPhone\r\nTruncate table Person_PhoneNumberType\r\nTruncate table Person_StateProvince"
-						}
-					],
-					"scriptBlockExecutionTimeout": "02:00:00"
-				}
-			},
-			{
-				"name": "Validation1",
-				"type": "Validation",
-				"dependsOn": [],
-				"userProperties": [],
-				"typeProperties": {
-					"dataset": {
-						"referenceName": "validate_ds_adls_mutiplefiles_to_mutipletables",
-						"type": "DatasetReference"
-					},
-					"timeout": "0.12:00:00",
-					"sleep": 10
-				}
 			}
 		],
-		"folder": {
-			"name": "Dev"
-		},
 		"annotations": [],
 		"lastPublishTime": "2025-05-08T10:08:41Z"
 	},
