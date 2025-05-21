@@ -23,7 +23,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "DelimitedText2",
+						"referenceName": "ds_adls_getmeta_filefound",
 						"type": "DatasetReference"
 					},
 					"fieldList": [
@@ -98,7 +98,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "DelimitedText3",
+									"referenceName": "src_ds_adls_filefound",
 									"type": "DatasetReference",
 									"parameters": {
 										"x": {
@@ -110,7 +110,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "AzureSqlTable1",
+									"referenceName": "ds_AzureSql_filefound",
 									"type": "DatasetReference",
 									"parameters": {
 										"y": {
@@ -131,7 +131,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@equals(variables('filefound'),true)",
+						"value": "@activity('Get Metadata3').output.exists",
 						"type": "Expression"
 					},
 					"activities": [
@@ -166,8 +166,8 @@
 							}
 						},
 						{
-							"name": "Wait1",
-							"type": "Wait",
+							"name": "If Condition1",
+							"type": "IfCondition",
 							"dependsOn": [
 								{
 									"activity": "Get Metadata3",
@@ -178,25 +178,38 @@
 							],
 							"userProperties": [],
 							"typeProperties": {
-								"waitTimeInSeconds": 120
+								"expression": {
+									"value": "@activity('Get Metadata3').output.exists",
+									"type": "Expression"
+								},
+								"ifFalseActivities": [
+									{
+										"name": "Wait",
+										"type": "Wait",
+										"dependsOn": [],
+										"userProperties": [],
+										"typeProperties": {
+											"waitTimeInSeconds": 30
+										}
+									}
+								]
 							}
 						}
 					],
-					"timeout": "0.00:10:00"
+					"timeout": "0.00:02:00"
 				}
 			}
 		],
 		"variables": {
 			"filefound": {
-				"type": "Boolean",
-				"defaultValue": true
+				"type": "Boolean"
 			}
 		},
 		"folder": {
 			"name": "Dev"
 		},
 		"annotations": [],
-		"lastPublishTime": "2025-05-15T07:36:23Z"
+		"lastPublishTime": "2025-05-21T09:05:34Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }
