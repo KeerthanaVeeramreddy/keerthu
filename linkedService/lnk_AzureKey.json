@@ -1,0 +1,10 @@
+{
+	"name": "lnk_AzureKey",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://veeramreddy.vault.azure.net/"
+		}
+	}
+}
