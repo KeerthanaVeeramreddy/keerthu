@@ -1,0 +1,31 @@
+{
+	"name": "AzureSqlDatabase2",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"parameters": {
+			"DATABASE": {
+				"type": "string"
+			},
+			"SERVER": {
+				"type": "string"
+			},
+			"USERNAME": {
+				"type": "string"
+			},
+			"PASSWORD": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "db-server-veeramreddy.database.windows.net",
+			"database": "@{linkedService().DATABASE}",
+			"encrypt": "mandatory",
+			"trustServerCertificate": true,
+			"authenticationType": "SQL",
+			"userName": "@{linkedService().USERNAME}",
+			"password": "@{linkedService().PASSWORD}"
+		}
+	}
+}

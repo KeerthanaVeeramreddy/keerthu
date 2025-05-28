@@ -1,0 +1,9 @@
+{
+	"name": "df-veeramreddy1-dev",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "76583bbd-d7d9-4c12-a339-303823669dae",
+		"tenantId": "3ae5a98a-d12e-4903-b51c-d3a6bb8fd608"
+	}
+}
