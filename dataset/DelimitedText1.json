@@ -11,8 +11,8 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": "HumanResources_Department.csv",
-				"folderPath": "HumanResources",
-				"fileSystem": "veeramreddy-container"
+				"folderPath": "Human Resources",
+				"fileSystem": "veeramreddy"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",

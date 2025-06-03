@@ -2,7 +2,7 @@
 	"name": "DelimitedText2",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "lnk_adls",
+			"referenceName": "lnk_Adls",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,8 +10,9 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "Human Resource",
-				"fileSystem": "keerthana-container-dev"
+				"fileName": "HumanResources_Department.csv",
+				"folderPath": "Human Resources",
+				"fileSystem": "veeramreddy"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",

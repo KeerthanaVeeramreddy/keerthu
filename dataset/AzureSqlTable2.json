@@ -1,5 +1,5 @@
 {
-	"name": "AzureSqlTable1",
+	"name": "AzureSqlTable2",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "lnk_AzureSql",
@@ -9,22 +9,17 @@
 		"type": "AzureSqlTable",
 		"schema": [
 			{
-				"name": "BusinessEntityID",
+				"name": "DepartmentID",
 				"type": "int",
 				"precision": 10
 			},
 			{
-				"name": "RateChangeDate",
-				"type": "date"
+				"name": "Name",
+				"type": "varchar"
 			},
 			{
-				"name": "Rate",
-				"type": "nvarchar"
-			},
-			{
-				"name": "PayFrequency",
-				"type": "tinyint",
-				"precision": 3
+				"name": "GroupName",
+				"type": "varchar"
 			},
 			{
 				"name": "ModifiedDate",
@@ -35,7 +30,7 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "HumanResources_EmployeePayHistory"
+			"table": "HumanResources_Department"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
