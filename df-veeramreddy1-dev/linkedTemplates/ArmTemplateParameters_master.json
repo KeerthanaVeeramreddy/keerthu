@@ -1,0 +1,81 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "df-veeramreddy1-dev"
+		},
+		"lnk_adls_accountKey": {
+			"value": ""
+		},
+		"lnk_AzureSql_password": {
+			"value": ""
+		},
+		"lnk_SqlServer_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase2_properties_typeProperties_server": {
+			"value": "db-server-veeramreddy.database.windows.net"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_database": {
+			"value": "@{linkedService().DATABASE}"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_userName": {
+			"value": "@{linkedService().USERNAME}"
+		},
+		"lnk_adls_properties_typeProperties_url": {
+			"value": "https://keerthidatalakedev.dfs.core.windows.net/"
+		},
+		"lnk_Adls_key_properties_typeProperties_url": {
+			"value": "https://devveeramreddydatalake.dfs.core.windows.net"
+		},
+		"lnk_AzureKey_properties_typeProperties_baseUrl": {
+			"value": "https://veeramreddy.vault.azure.net/"
+		},
+		"lnk_AzureKeyVault_properties_typeProperties_baseUrl": {
+			"value": "https://veeramreddy.vault.azure.net/"
+		},
+		"lnk_AzureSql_properties_typeProperties_server": {
+			"value": "db-server-veeramreddy.database.windows.net"
+		},
+		"lnk_AzureSql_properties_typeProperties_database": {
+			"value": "db_veeramreddy"
+		},
+		"lnk_AzureSql_properties_typeProperties_userName": {
+			"value": "KeerthanaVeeramreddy"
+		},
+		"lnk_AzureSql_key_properties_typeProperties_connectionString_secretName": {
+			"value": "VeeramreddyNewSQL"
+		},
+		"lnk_Key_Adls_properties_typeProperties_url": {
+			"value": "https://devveeramreddydatalake.dfs.core.windows.net"
+		},
+		"lnk_Parameters_AzureSql_properties_typeProperties_server": {
+			"value": "@{linkedService().domain name}"
+		},
+		"lnk_Parameters_AzureSql_properties_typeProperties_database": {
+			"value": "@{linkedService().Database name}"
+		},
+		"lnk_Parameters_AzureSql_properties_typeProperties_userName": {
+			"value": "@{linkedService().Username}"
+		},
+		"lnk_SqlServer_properties_typeProperties_server": {
+			"value": "KEERTHI"
+		},
+		"lnk_SqlServer_properties_typeProperties_database": {
+			"value": "AdventureWorks2022"
+		},
+		"lnk_SqlServer_properties_typeProperties_userName": {
+			"value": "keerthi"
+		},
+		"lnk_key_AzureSql_properties_typeProperties_connectionString_secretName": {
+			"value": "KeyAzureSQL"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
