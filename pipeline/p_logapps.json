@@ -43,13 +43,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DelimitedText1",
+						"referenceName": "ds_Adls_file",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSqlTable1",
+						"referenceName": "leds_AzureSql_table",
 						"type": "DatasetReference"
 					}
 				]
@@ -85,8 +85,11 @@
 				}
 			}
 		],
+		"folder": {
+			"name": "Dev2"
+		},
 		"annotations": [],
-		"lastPublishTime": "2025-06-02T06:42:23Z"
+		"lastPublishTime": "2025-06-10T05:57:14Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }
