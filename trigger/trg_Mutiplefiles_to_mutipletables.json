@@ -17,7 +17,6 @@
 				"frequency": "Day",
 				"interval": 1,
 				"startTime": "2025-05-15T02:00:00",
-				"endTime": "2025-05-06T09:06:00",
 				"timeZone": "India Standard Time",
 				"schedule": {
 					"minutes": [
