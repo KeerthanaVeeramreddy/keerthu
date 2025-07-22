@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"folderPath": "schema data",
-				"fileSystem": "keerthana-container-dev"
+				"fileSystem": "keerthi"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
