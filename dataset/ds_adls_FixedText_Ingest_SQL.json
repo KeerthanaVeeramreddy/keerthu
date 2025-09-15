@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText1",
+	"name": "ds_adls_FixedText_Ingest_SQL",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "lnk_Adls",
@@ -10,41 +10,34 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "Files",
-				"fileSystem": "vamsi"
+				"fileName": "sqltoAzuresql_cleaned.txt",
+				"folderPath": "textfiles",
+				"fileSystem": "keerthi"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "\t",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
 		"schema": [
 			{
-				"name": "ItemId",
+				"name": "BusinessEntityID",
 				"type": "String"
 			},
 			{
-				"name": "VarItId",
+				"name": "RateChangeDate",
 				"type": "String"
 			},
 			{
-				"name": "ItemName",
+				"name": "Rate",
 				"type": "String"
 			},
 			{
-				"name": "VarTname",
+				"name": "PayFrequency",
 				"type": "String"
 			},
 			{
-				"name": "WhNo",
-				"type": "String"
-			},
-			{
-				"name": "Zone",
-				"type": "String"
-			},
-			{
-				"name": "Bin",
+				"name": "ModifiedDate",
 				"type": "String"
 			}
 		]

@@ -1,16 +1,31 @@
 {
-	"name": "DelimitedText1",
+	"name": "DelimitedText11",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "lnk_Adls",
 			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"filename": {
+				"type": "string"
+			},
+			"size": {
+				"type": "string"
+			}
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "Files",
+				"fileName": {
+					"value": "@dataset().filename",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().size",
+					"type": "Expression"
+				},
 				"fileSystem": "vamsi"
 			},
 			"columnDelimiter": ",",
@@ -20,31 +35,27 @@
 		},
 		"schema": [
 			{
-				"name": "ItemId",
+				"name": "BusinessEntityID",
 				"type": "String"
 			},
 			{
-				"name": "VarItId",
+				"name": "Name",
 				"type": "String"
 			},
 			{
-				"name": "ItemName",
+				"name": "SalesPersonID",
 				"type": "String"
 			},
 			{
-				"name": "VarTname",
+				"name": "Demographics",
 				"type": "String"
 			},
 			{
-				"name": "WhNo",
+				"name": "rowguid",
 				"type": "String"
 			},
 			{
-				"name": "Zone",
-				"type": "String"
-			},
-			{
-				"name": "Bin",
+				"name": "ModifiedDate",
 				"type": "String"
 			}
 		]

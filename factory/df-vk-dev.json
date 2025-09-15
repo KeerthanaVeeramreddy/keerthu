@@ -1,0 +1,9 @@
+{
+	"name": "df-vk-dev",
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "4879c2fd-919b-4109-b2ea-02f6fa469bfa",
+		"tenantId": "f3d9d746-eeb3-41b8-bead-b29832a4063f"
+	}
+}

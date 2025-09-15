@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText1",
+	"name": "DelimitedText5",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "lnk_Adls",
@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "Files",
+				"folderPath": "op",
 				"fileSystem": "vamsi"
 			},
 			"columnDelimiter": ",",
@@ -24,27 +24,11 @@
 				"type": "String"
 			},
 			{
-				"name": "VarItId",
-				"type": "String"
-			},
-			{
 				"name": "ItemName",
 				"type": "String"
 			},
 			{
 				"name": "VarTname",
-				"type": "String"
-			},
-			{
-				"name": "WhNo",
-				"type": "String"
-			},
-			{
-				"name": "Zone",
-				"type": "String"
-			},
-			{
-				"name": "Bin",
 				"type": "String"
 			}
 		]

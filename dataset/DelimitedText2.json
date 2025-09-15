@@ -10,33 +10,15 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "HumanResources_Department.csv",
-				"folderPath": "Human Resources",
-				"fileSystem": "veeramreddy"
+				"folderPath": "op",
+				"fileSystem": "vamsi"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": [
-			{
-				"name": "DepartmentID",
-				"type": "String"
-			},
-			{
-				"name": "Name",
-				"type": "String"
-			},
-			{
-				"name": "GroupName",
-				"type": "String"
-			},
-			{
-				"name": "ModifiedDate",
-				"type": "String"
-			}
-		]
+		"schema": []
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }

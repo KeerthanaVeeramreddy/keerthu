@@ -1,16 +1,25 @@
 {
-	"name": "DelimitedText1",
+	"name": "DelimitedText10",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "lnk_Adls",
 			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"filename": {
+				"type": "string"
+			}
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "Files",
+				"fileName": {
+					"value": "@dataset().filename",
+					"type": "Expression"
+				},
+				"folderPath": "filesize",
 				"fileSystem": "vamsi"
 			},
 			"columnDelimiter": ",",
@@ -20,31 +29,27 @@
 		},
 		"schema": [
 			{
-				"name": "ItemId",
+				"name": "PolicyID",
 				"type": "String"
 			},
 			{
-				"name": "VarItId",
+				"name": "CustomerID",
 				"type": "String"
 			},
 			{
-				"name": "ItemName",
+				"name": "Premium",
 				"type": "String"
 			},
 			{
-				"name": "VarTname",
+				"name": "ClaimAmount",
 				"type": "String"
 			},
 			{
-				"name": "WhNo",
+				"name": "ClaimStatus",
 				"type": "String"
 			},
 			{
-				"name": "Zone",
-				"type": "String"
-			},
-			{
-				"name": "Bin",
+				"name": "StartDate",
 				"type": "String"
 			}
 		]

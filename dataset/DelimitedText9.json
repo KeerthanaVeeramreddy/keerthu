@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText1",
+	"name": "DelimitedText9",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "lnk_Adls",
@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "Files",
+				"folderPath": "filesize",
 				"fileSystem": "vamsi"
 			},
 			"columnDelimiter": ",",
@@ -20,31 +20,27 @@
 		},
 		"schema": [
 			{
-				"name": "ItemId",
+				"name": "PolicyID",
 				"type": "String"
 			},
 			{
-				"name": "VarItId",
+				"name": "CustomerID",
 				"type": "String"
 			},
 			{
-				"name": "ItemName",
+				"name": "Premium",
 				"type": "String"
 			},
 			{
-				"name": "VarTname",
+				"name": "ClaimAmount",
 				"type": "String"
 			},
 			{
-				"name": "WhNo",
+				"name": "ClaimStatus",
 				"type": "String"
 			},
 			{
-				"name": "Zone",
-				"type": "String"
-			},
-			{
-				"name": "Bin",
+				"name": "StartDate",
 				"type": "String"
 			}
 		]

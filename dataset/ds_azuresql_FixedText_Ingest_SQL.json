@@ -1,0 +1,17 @@
+{
+	"name": "ds_azuresql_FixedText_Ingest_SQL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lnk_AzureSql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "HumanResources_EmployeePayHistory"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

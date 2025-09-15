@@ -1,15 +1,24 @@
 {
-	"name": "DelimitedText1",
+	"name": "DelimitedText4",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "lnk_Adls",
 			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Filename": {
+				"type": "string"
+			}
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().Filename",
+					"type": "Expression"
+				},
 				"folderPath": "Files",
 				"fileSystem": "vamsi"
 			},
@@ -20,31 +29,47 @@
 		},
 		"schema": [
 			{
-				"name": "ItemId",
+				"name": "ProductID",
 				"type": "String"
 			},
 			{
-				"name": "VarItId",
+				"name": "BusinessEntityID",
 				"type": "String"
 			},
 			{
-				"name": "ItemName",
+				"name": "AverageLeadTime",
 				"type": "String"
 			},
 			{
-				"name": "VarTname",
+				"name": "StandardPrice",
 				"type": "String"
 			},
 			{
-				"name": "WhNo",
+				"name": "LastReceiptCost",
 				"type": "String"
 			},
 			{
-				"name": "Zone",
+				"name": "LastReceiptDate",
 				"type": "String"
 			},
 			{
-				"name": "Bin",
+				"name": "MinOrderQty",
+				"type": "String"
+			},
+			{
+				"name": "MaxOrderQty",
+				"type": "String"
+			},
+			{
+				"name": "OnOrderQty",
+				"type": "String"
+			},
+			{
+				"name": "UnitMeasureCode",
+				"type": "String"
+			},
+			{
+				"name": "ModifiedDate",
 				"type": "String"
 			}
 		]
