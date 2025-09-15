@@ -1,0 +1,316 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "df-vk-dev"
+		},
+		"lnk_adls_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'lnk_adls'"
+		},
+		"lnk_AzureSql_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'lnk_AzureSql'"
+		},
+		"lnk_SqlServer_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'lnk_SqlServer'"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "db-server-veeramreddy.database.windows.net"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "@{linkedService().DATABASE}"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "@{linkedService().USERNAME}"
+		},
+		"lnk_adls_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://keerthidatalatedev1234.dfs.core.windows.net"
+		},
+		"lnk_Adls_key_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://devveeramreddydatalake.dfs.core.windows.net"
+		},
+		"lnk_AzureKey_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://veeramreddy.vault.azure.net/"
+		},
+		"lnk_AzureKeyVault_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://veeramreddy.vault.azure.net/"
+		},
+		"lnk_AzureSql_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "db-server-vk.database.windows.net"
+		},
+		"lnk_AzureSql_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "db_vk"
+		},
+		"lnk_AzureSql_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "KeerthanaVeeramreddy"
+		},
+		"lnk_AzureSql_key_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "VeeramreddyNewSQL"
+		},
+		"lnk_Key_Adls_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://devveeramreddydatalake.dfs.core.windows.net"
+		},
+		"lnk_Parameters_AzureSql_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "@{linkedService().domain name}"
+		},
+		"lnk_Parameters_AzureSql_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "@{linkedService().Database name}"
+		},
+		"lnk_Parameters_AzureSql_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "@{linkedService().Username}"
+		},
+		"lnk_SqlServer_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "KEERTHI"
+		},
+		"lnk_SqlServer_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorks2022"
+		},
+		"lnk_SqlServer_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "keerthi"
+		},
+		"lnk_key_AzureSql_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "KeyAzureSQL"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "df-vk-dev_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"lnk_adls_accountKey": {
+						"value": "[parameters('lnk_adls_accountKey')]"
+					},
+					"lnk_AzureSql_password": {
+						"value": "[parameters('lnk_AzureSql_password')]"
+					},
+					"AzureSqlDatabase2_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase2_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase2_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_userName')]"
+					},
+					"lnk_adls_properties_typeProperties_url": {
+						"value": "[parameters('lnk_adls_properties_typeProperties_url')]"
+					},
+					"lnk_AzureKey_properties_typeProperties_baseUrl": {
+						"value": "[parameters('lnk_AzureKey_properties_typeProperties_baseUrl')]"
+					},
+					"lnk_AzureKeyVault_properties_typeProperties_baseUrl": {
+						"value": "[parameters('lnk_AzureKeyVault_properties_typeProperties_baseUrl')]"
+					},
+					"lnk_AzureSql_properties_typeProperties_server": {
+						"value": "[parameters('lnk_AzureSql_properties_typeProperties_server')]"
+					},
+					"lnk_AzureSql_properties_typeProperties_database": {
+						"value": "[parameters('lnk_AzureSql_properties_typeProperties_database')]"
+					},
+					"lnk_AzureSql_properties_typeProperties_userName": {
+						"value": "[parameters('lnk_AzureSql_properties_typeProperties_userName')]"
+					},
+					"lnk_Parameters_AzureSql_properties_typeProperties_server": {
+						"value": "[parameters('lnk_Parameters_AzureSql_properties_typeProperties_server')]"
+					},
+					"lnk_Parameters_AzureSql_properties_typeProperties_database": {
+						"value": "[parameters('lnk_Parameters_AzureSql_properties_typeProperties_database')]"
+					},
+					"lnk_Parameters_AzureSql_properties_typeProperties_userName": {
+						"value": "[parameters('lnk_Parameters_AzureSql_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "df-vk-dev_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'df-vk-dev_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "df-vk-dev_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'df-vk-dev_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "df-vk-dev_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'df-vk-dev_ArmTemplate_2')]"
+			]
+		},
+		{
+			"name": "df-vk-dev_ArmTemplate_4",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_4.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"lnk_SqlServer_password": {
+						"value": "[parameters('lnk_SqlServer_password')]"
+					},
+					"lnk_Adls_key_properties_typeProperties_url": {
+						"value": "[parameters('lnk_Adls_key_properties_typeProperties_url')]"
+					},
+					"lnk_AzureSql_key_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('lnk_AzureSql_key_properties_typeProperties_connectionString_secretName')]"
+					},
+					"lnk_Key_Adls_properties_typeProperties_url": {
+						"value": "[parameters('lnk_Key_Adls_properties_typeProperties_url')]"
+					},
+					"lnk_SqlServer_properties_typeProperties_server": {
+						"value": "[parameters('lnk_SqlServer_properties_typeProperties_server')]"
+					},
+					"lnk_SqlServer_properties_typeProperties_database": {
+						"value": "[parameters('lnk_SqlServer_properties_typeProperties_database')]"
+					},
+					"lnk_SqlServer_properties_typeProperties_userName": {
+						"value": "[parameters('lnk_SqlServer_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'df-vk-dev_ArmTemplate_3')]"
+			]
+		},
+		{
+			"name": "df-vk-dev_ArmTemplate_5",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_5.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"lnk_key_AzureSql_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('lnk_key_AzureSql_properties_typeProperties_connectionString_secretName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'df-vk-dev_ArmTemplate_4')]"
+			]
+		},
+		{
+			"name": "df-vk-dev_ArmTemplate_6",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_6.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'df-vk-dev_ArmTemplate_5')]"
+			]
+		}
+	]
+}
